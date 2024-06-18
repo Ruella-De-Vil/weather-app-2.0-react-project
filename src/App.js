@@ -1,4 +1,6 @@
 import './App.css';
+import React from 'react';
+import Weather from './Weather.js';
 
 function App() {
   return (
@@ -7,7 +9,9 @@ function App() {
         <header>
         <h1>React Weather App</h1>
         </header>
-         <button className="btn btn-primary">hello</button>
+        <main>
+          <Weather />
+        </main>
       </div>
     </div>
   );
