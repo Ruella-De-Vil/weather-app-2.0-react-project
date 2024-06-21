@@ -11,20 +11,23 @@ export default function Weather() {
                 </form>
             </div >
             <h1 className="city">Durban</h1>
-            <p className="day-and-time">Tuesday, 10:00</p>
+            <p className="day-and-time"><span className="day"> Tuesday</span>, <span className="time">10:00</span></p>
             <div className="row">
-            <div className="current-condition col">
-             <p>Partly cloudy</p>
-             <h2 className="current-temp">24°C
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="icon"></img>
+            <div className="current-condition clearfix col">
+             <p className="condition-description">Partly cloudy</p>
+             <h2 className="current-temp "><span className="temp-value">24</span><span className="unit">°C</span>
+            <img className="current-weather-icon" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="icon"></img>
             </h2>
             </div>
             <div className="w-h-f col">
-            <p>Wind: 10km/h</p>
-            <p>Humidity: 60%</p>
-            <p>Feels Like: 24°C</p>
+            <p>Wind: <span className="wind">10km/h</span></p>
+            <p>Humidity: <span className="humidity">60%</span></p>
+            <p>Feels Like: <span className="real-feel">24°C</span></p>
             </div>
             </div>
+            <footer className="mt-3">
+                <p>Coded by <a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX">Ruella Budhoo</a>, open-sourced on <a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" >Github</a> and hosted via <a href="">Netlify</a>.</p>
+            </footer>
         </div>
     )
 }

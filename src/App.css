@@ -14,15 +14,16 @@
   text-align: center;
 }
 
-.search-bar {
+.search-bar, .search-bar:focus {
   border-radius: 10px;
-  color: #191d2b;
+  color: #215374cc;
   padding: 5px;
   margin-right: 4px;
   border-color: #131e4470;
   padding-left: 10px;
   border-style: ridge;
 }
+
 
 .search-btn {
   border-radius: 10px;
@@ -34,8 +35,20 @@
   border-style: ridge;
 }
 
-.current-condition{
+.search-btn:hover, .search-bar:active {
+  color: #142835ce;
+  border-color: #131e4470;
+  background-color: #fdfdff;
+}
+.current-condition {
   text-align: right;
+}
+.temp-value {
+  font-size: 1.5em;
+}
+
+.current-weather-icon {
+  width: 3.5em;
 }
 
 .w-h-f {
@@ -49,4 +62,8 @@ p {
 
 .city, .current-temp {
   color: #142835ce;
+}
+
+footer p {
+font-size: x-small;
 }
