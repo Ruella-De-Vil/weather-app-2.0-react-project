@@ -3,11 +3,11 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function Weather() {
-    const [ready, setReady] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+    const [weatherData, setWeatherData] = useState({ ready: false });
  function handleResponse(response){
     console.log(response.data);
     setWeatherData({
+        ready: true,
         temperature: response.data.main.temp,
         city: response.data.name,
         country: response.data.sys.country,
@@ -15,13 +15,15 @@ export default function Weather() {
         description: response.data.weather[0].description,
         icon: response.data.weather[0].icon,
         iconUrl:"https://openweathermap.org/img/wn/10d@2x.png",
+        day: "Monday",
+        time: "10:00",
         humidity: response.data.main.humidity,
         realFeel: response.data.main.feels_like
     });
     setReady(true);
  } 
 
-if (ready) {
+if (weatherData.ready) {
     return (
         <div className="Weather mt-3 pb-1 ps-4 pe-4" >
             <div  className="search-engine pt-4 pb-3">
@@ -31,7 +33,7 @@ if (ready) {
                 </form>
             </div >
             <h1 className="city">{weatherData.city}, {weatherData.country}</h1>
-            <p className="day-and-time"><span className="day"> Tuesday</span>, <span className="time">10:00</span></p>
+            <p className="day-and-time"><span className="day"> {weatherData.day}</span>, <span className="time">{weatherData.time}</span></p>
             <div className="row">
             <div className="current-condition clearfix col">
             <p className="condition-description text-capitalize">{(weatherData.description)/*.toUpperCase().charAt(0) + (weatherData.description).slice(1)*/}</p>
