@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather() {
     const [weatherData, setWeatherData] = useState({ ready: false });
@@ -32,21 +32,7 @@ if (weatherData.ready) {
                     <input className="search-btn" type="submit" value="Search" />
                 </form>
             </div >
-            <h1 className="city">{weatherData.city}, {weatherData.country}</h1>
-            <FormattedDate date={weatherData.date} />
-            <div className="row">
-            <div className="current-condition clearfix col">
-            <p className="condition-description text-capitalize">{(weatherData.description)/*.toUpperCase().charAt(0) + (weatherData.description).slice(1)*/}</p>
-             <h2 className="current-temp "><span className="temperature">{Math.round(weatherData.temperature)}</span><span className="unit">°C</span>
-        <img className="current-weather-icon" src= {weatherData.icoUrl} alt= {weatherData.description}></img>
-            </h2>
-            </div>
-            <div className="w-h-f col">
-            <p>Wind: <span className="wind">{weatherData.wind}km/h</span></p>
-            <p>Humidity: <span className="humidity">{weatherData.humidity}%</span></p>
-        <p>Feels Like: <span className="real-feel">{Math.round(weatherData.realFeel)}°C</span></p>
-            </div>
-            </div>
+            <WeatherInfo info = {weatherData}/>
             <footer className="mt-3">
                 <p>Coded by <a href="https://github.com/Ruella-De-Vil">Ruella Budhoo</a>, open-sourced on <a href="https://github.com/Ruella-De-Vil/weather-app-2.0-react-project" >Github</a> and hosted via <a href="">Netlify</a>.</p>
             </footer>
