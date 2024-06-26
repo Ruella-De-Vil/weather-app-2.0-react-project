@@ -11,7 +11,7 @@ export default function WeatherInfo(props) {
             <div className="current-condition clearfix col">
             <p className="condition-description text-capitalize">{(weatherData.description)/*.toUpperCase().charAt(0) + (weatherData.description).slice(1)*/}</p>
              <h2 className="current-temp "><span className="temperature">{Math.round(weatherData.temperature)}</span><span className="unit">°C</span>
-        <img className="current-weather-icon" src= {weatherData.icoUrl} alt= {weatherData.description}></img>
+        <img className="current-weather-icon" src= {weatherData.iconUrl} alt= {weatherData.description}></img>
             </h2>
             </div>
             <div className="w-h-f col">

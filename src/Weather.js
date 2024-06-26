@@ -15,8 +15,7 @@ export default function Weather(props) {
         country: response.data.sys.country,
         wind: response.data.wind.speed,
         description: response.data.weather[0].description,
-        icon: response.data.weather[0].icon,
-        iconUrl:"https://openweathermap.org/img/wn/10d@2x.png",
+        iconUrl:`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
         date: new Date((response.data.dt + (response.data.timezone - 7200))*1000),
         humidity: response.data.main.humidity,
         realFeel: response.data.main.feels_like
