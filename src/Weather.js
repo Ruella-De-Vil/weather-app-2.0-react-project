@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather() {
     const [weatherData, setWeatherData] = useState({ ready: false });
@@ -15,12 +16,11 @@ export default function Weather() {
         description: response.data.weather[0].description,
         icon: response.data.weather[0].icon,
         iconUrl:"https://openweathermap.org/img/wn/10d@2x.png",
-        day: "Monday",
-        time: "10:00",
+        date: new Date(response.data.dt*1000),
         humidity: response.data.main.humidity,
         realFeel: response.data.main.feels_like
     });
-    setReady(true);
+
  } 
 
 if (weatherData.ready) {
@@ -33,7 +33,7 @@ if (weatherData.ready) {
                 </form>
             </div >
             <h1 className="city">{weatherData.city}, {weatherData.country}</h1>
-            <p className="day-and-time"><span className="day"> {weatherData.day}</span>, <span className="time">{weatherData.time}</span></p>
+            <FormattedDate date={weatherData.date} />
             <div className="row">
             <div className="current-condition clearfix col">
             <p className="condition-description text-capitalize">{(weatherData.description)/*.toUpperCase().charAt(0) + (weatherData.description).slice(1)*/}</p>
@@ -48,7 +48,7 @@ if (weatherData.ready) {
             </div>
             </div>
             <footer className="mt-3">
-                <p>Coded by <a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX">Ruella Budhoo</a>, open-sourced on <a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" >Github</a> and hosted via <a href="">Netlify</a>.</p>
+                <p>Coded by <a href="https://github.com/Ruella-De-Vil">Ruella Budhoo</a>, open-sourced on <a href="https://github.com/Ruella-De-Vil/weather-app-2.0-react-project" >Github</a> and hosted via <a href="">Netlify</a>.</p>
             </footer>
         </div>
     )
@@ -60,4 +60,4 @@ if (weatherData.ready) {
  
  return "Loading...";
 }
-}//"https://openweathermap.org/img/wn/10d@2x.png"
+}
