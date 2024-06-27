@@ -44,7 +44,7 @@
   text-align: right;
 }
 .temperature {
-  font-size: 1.8em;
+  font-size: 1.7em;
   position: relative;
   left: 2.5rem;
   z-index: 10;
@@ -60,6 +60,7 @@
 
 .icon {
   height: 3em;
+  max-height: 85px;
   width: auto;
   position: relative;
   top: 0.8rem;
