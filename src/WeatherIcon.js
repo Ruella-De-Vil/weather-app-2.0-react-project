@@ -22,10 +22,10 @@ export default function WeatherIcon(props){
 		"50d": "mist",
 		"50n": "mist"
 	}
-    let meteoIconUrl= `https://bmcdn.nl/assets/weather-icons/v2.0/line/${iconMapping[meteoIcon]}.svg`;
+    let meteoIconUrl= `https://bmcdn.nl/assets/weather-icons/v2.0/fill/${iconMapping[meteoIcon]}.svg`;
     
 
     return(
-        <img src={meteoIconUrl} alt= {props.alt} height="48"/>
+        <img className="icon" src={meteoIconUrl} alt= {props.alt} height="48"/>
     )
 }

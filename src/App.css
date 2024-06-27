@@ -44,11 +44,27 @@
   text-align: right;
 }
 .temperature {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  position: relative;
+  left: 2.5rem;
+  z-index: 10;
 }
 
-.current-weather-icon {
-  width: 3.5em;
+.unit {
+  position: relative;
+  left: 2.5rem;
+  bottom: 1rem;
+  z-index: 5;
+  opacity: 0.75;
+}
+
+.icon {
+  height: 3em;
+  width: auto;
+  position: relative;
+  top: 0.8rem;
+  left: 0.5rem;
+  z-index: -5;
 }
 
 .w-h-f {
