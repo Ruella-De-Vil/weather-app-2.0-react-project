@@ -53,7 +53,7 @@ if (weatherData.ready) {
             </div >
             <WeatherInfo info = {weatherData}/>
             <footer className="mt-3">
-                <p>Coded by <a href="https://github.com/Ruella-De-Vil">Ruella Budhoo</a>, open-sourced on <a href="https://github.com/Ruella-De-Vil/weather-app-2.0-react-project" >Github</a> and hosted via <a href="">Netlify</a>.</p>
+                <p>Coded by <a href="https://github.com/Ruella-De-Vil">Ruella Budhoo</a>, open-sourced on <a href="https://github.com/Ruella-De-Vil/weather-app-2.0-react-project" >Github</a> and hosted via <a href="https://www.netlify.com/">Netlify</a>.</p>
           </footer>
         </div>
     )
