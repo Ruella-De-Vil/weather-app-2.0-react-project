@@ -42,35 +42,53 @@
 }
 .current-condition {
   text-align: right;
+  max-height: 90px;
 }
+
 .temperature {
   font-size: 1.7em;
   position: relative;
-  left: 2.5rem;
   z-index: 10;
+  opacity: 0.8;
 }
 
-.unit {
+.unit-current {
   position: relative;
-  left: 2.5rem;
-  bottom: 1rem;
+  right: 0.2rem;
+  bottom: 0rem;
   z-index: 5;
-  opacity: 0.75;
+  opacity: 0.8;
+  font-size: large;
+}
+
+.unit-change {
+  position: relative;
+  right: 0.2rem;
+  bottom: 0rem;
+  z-index: 5;
+  opacity: 0.5;
+  font-size: large;
 }
 
 .icon {
-  height: 3em;
-  max-height: 85px;
+  height: 4em;
+  max-height: 80px;
   width: auto;
   position: relative;
-  top: 0.8rem;
-  left: 0.5rem;
+  top: -5.5rem;
+  left: 1rem;
   z-index: -5;
+}
+
+h2 a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .w-h-f {
   text-align: left;
   border-left: 1.5px solid #131e4470;
+  max-height: 90px;
 }
 
 p {
