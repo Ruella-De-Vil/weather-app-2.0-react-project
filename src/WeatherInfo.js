@@ -14,7 +14,9 @@ export default function WeatherInfo(props) {
             <div className="current-condition clearfix col">
             <p className="condition-description text-capitalize">{(weatherData.description)/*.toUpperCase().charAt(0) + (weatherData.description).slice(1)*/}</p>
             <TempMeasurement metric={weatherData.temperature}/>
+            <span className="current-icon">
             <WeatherIcon iconId={weatherData.icon} alt={weatherData.description}/>
+            </span>
             </div>
             <div className="w-h-f col">
             <p>Wind: <span className="wind">{weatherData.wind}km/h</span></p>

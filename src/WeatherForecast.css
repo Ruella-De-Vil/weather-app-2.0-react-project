@@ -1,0 +1,13 @@
+.forecast-day, .forecast-max, .forecast-min  {
+    display: flex;
+    align-items: center;
+    color: #142835c0;
+    font-size: 1.1em;
+}
+
+.forecast-icon {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+  

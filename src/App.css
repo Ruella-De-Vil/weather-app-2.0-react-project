@@ -40,6 +40,11 @@
   border-color: #131e4470;
   background-color: #fdfdff;
 }
+
+.day-and-time {
+  font-size: 1.1em;
+}
+
 .current-condition {
   text-align: right;
   max-height: 90px;
@@ -49,7 +54,6 @@
   font-size: 1.7em;
   position: relative;
   z-index: 10;
-  opacity: 0.8;
 }
 
 .unit-current {
@@ -70,14 +74,18 @@
   font-size: large;
 }
 
-.icon {
-  height: 4em;
-  max-height: 80px;
+img {
+  height: 100%;
   width: auto;
+  border-radius: 50%;
+  background-color: #0f929210;
+}
+
+.current-icon {
   position: relative;
-  top: -5.5rem;
-  left: 1rem;
-  z-index: -5;
+  top: -6.9rem;
+  left: 1.5rem;
+  z-index: 10;
 }
 
 h2 a {
