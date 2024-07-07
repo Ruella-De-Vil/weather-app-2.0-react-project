@@ -20,7 +20,9 @@ export default function Weather(props) {
         icon: response.data.weather[0].icon,
         date: new Date((response.data.dt + (response.data.timezone - 7200))*1000),
         humidity: response.data.main.humidity,
-        realFeel: response.data.main.feels_like
+        realFeel: response.data.main.feels_like,
+        lon: response.data.coord.lon,
+        lat: response.data.coord.lat
     });
 
  }
@@ -52,7 +54,7 @@ if (weatherData.ready) {
                 </form>
             </div >
             <WeatherInfo info = {weatherData}/>
-            <WeatherForecast forecastInfo = {weatherData}/>
+            <WeatherForecast forecastInfo = {weatherData} />
             <footer className="mt-3">
                 <p>Coded by <a href="https://github.com/Ruella-De-Vil">Ruella Budhoo</a>, open-sourced on <a href="https://github.com/Ruella-De-Vil/weather-app-2.0-react-project" >Github</a> and hosted via <a href="https://www.netlify.com/">Netlify</a>.</p>
           </footer>
