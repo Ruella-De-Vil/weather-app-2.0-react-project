@@ -47,10 +47,10 @@ const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=$
               <WeatherIcon iconId={dayData.icon} />
         </div>
         <div className="col-2 forecast-max justify-content-end">
-            <strong>{Math.round(dayData.maxTemp)}</strong>
+            <strong>{Math.round(dayData.maxTemp)}°C</strong>
         </div>
         <div className="col-2 forecast-min justify-content-start">
-        {Math.round(dayData.minTemp)}
+        {Math.round(dayData.minTemp)}°C
         </div>
       </div>
       );
