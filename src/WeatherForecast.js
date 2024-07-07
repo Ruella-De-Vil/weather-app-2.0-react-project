@@ -4,7 +4,7 @@ import "./WeatherForecast.css";
 import axios from "axios";
 
 export default function  WeatherForecast(props) {
-  const [forecastData, setForecastData] = useState({ ready: false });
+  const [forecastData, setForecastData] = useState({ ready: false, daily: [] });
 
   useEffect(() => {
 let weatherData = props.forecastInfo;
@@ -20,38 +20,41 @@ const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=$
     setForecastData(
       {
         ready: true,
-        date: new Date((response.data.daily[0].dt)*1000),
-        maxTemp: response.data.daily[0].temp.max,
-        minTemp: response.data.daily[0].temp.min,
-        icon: response.data.daily[0].weather[0].icon
-      }
-    )
+        daily: response.data.daily.slice(0, 5).map(day => ({
+          date: new Date(day.dt * 1000),
+          maxTemp: day.temp.max,
+          minTemp: day.temp.min,
+          icon: day.weather[0].icon,
+        })),
+      });
   }
 
 }, [props.forecastInfo]);
 
-  if (forecastData.ready){
-    
-   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-   let day = days[forecastData.date.getDay()];
+  if (forecastData.ready) {
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
    
-   console.log(day);
   return (
     <div className="container weather-forecast pt-2">
-      <div className="row justify-content-center">
+      {forecastData.daily.map((dayData, index) => {
+          let day = days[dayData.date.getDay()];
+          return (
+      <div key={index} className="row justify-content-center">
         <div className="col-4 forecast-day justify-content-center">
             {day}
         </div>
         <div className="col-2 forecast-icon justify-content-center">
-              <WeatherIcon iconId={forecastData.icon} />
+              <WeatherIcon iconId={dayData.icon} />
         </div>
         <div className="col-2 forecast-max justify-content-end">
-            <strong>{Math.round(forecastData.maxTemp)}</strong>
+            <strong>{Math.round(dayData.maxTemp)}</strong>
         </div>
         <div className="col-2 forecast-min justify-content-start">
-        {Math.round(forecastData.minTemp)}
+        {Math.round(dayData.minTemp)}
         </div>
       </div>
+      );
+      })}
       </div>
   );
 } else {
