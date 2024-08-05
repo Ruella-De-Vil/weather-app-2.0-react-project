@@ -20,7 +20,7 @@ const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=$
     setForecastData(
       {
         ready: true,
-        daily: response.data.daily.slice(0, 5).map(day => ({
+        daily: response.data.daily.slice(1, 6).map(day => ({
           date: new Date(day.dt * 1000),
           maxTemp: day.temp.max,
           minTemp: day.temp.min,
