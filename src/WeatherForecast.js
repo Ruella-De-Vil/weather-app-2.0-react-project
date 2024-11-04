@@ -10,8 +10,8 @@ export default function  WeatherForecast(props) {
 let weatherData = props.forecastInfo;
 let lat = weatherData.lat;
 let lon = weatherData.lon;
-const apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
-const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current,alerts&appid=${apiKey}&units=metric`;
+const apiKey = "5a16t2db0c3897f4c93565ba46a2o0f4";
+const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(handleResponse);
 
@@ -21,10 +21,10 @@ const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=$
       {
         ready: true,
         daily: response.data.daily.slice(1, 6).map(day => ({
-          date: new Date(day.dt * 1000),
-          maxTemp: day.temp.max,
-          minTemp: day.temp.min,
-          icon: day.weather[0].icon,
+          date: new Date(day.time * 1000),
+          maxTemp: day.temperature.maximum,
+          minTemp: day.temperature.minimum,
+          icon: day.condition.icon,
         })),
       });
   }
