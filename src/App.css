@@ -8,14 +8,14 @@
   font-style: normal;
   max-width: 450px;
   margin: auto;
-  background-color: #1791a734;
+  background-color: #1791a74b;
 }
 
 .search-engine {
   text-align: center;
 }
 
-.search-bar, .search-bar:focus {
+.search-bar {
   border-radius: 10px;
   color: #215374cc;
   padding: 5px;
@@ -110,4 +110,44 @@ p {
 
 footer p {
 font-size: x-small;
+}
+
+@media only screen and (max-width: 425px) {
+  html {
+    background-color: #1791a74b; 
+  }
+
+  .App {
+    border: none;
+    background-color: #1791a74b;
+  }
+
+  .Weather {
+    border: none;
+    background-color: #1791a700;
+  }
+
+  .city {
+    font-size: 2.5em;
+    padding-top: 0.5em;
+  }
+
+  .day-and-time {
+    font-size: 1.5em;
+    padding: 0.5em 0;
+  }
+  
+  .current-condition {
+    text-align: right;
+    max-height: 6.5em;
+  }
+
+  .condition-description {
+    padding-bottom: 0.5em;
+  }
+  
+  footer p {
+    padding-top: 1em;
+    font-size: x-small;
+  }
 }
